@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Miltonian Tattoo';
+    src: url('fonts/MiltonianTattoo.woff2') format('woff2'), /* Super Modern Browsers */
+         url('fonts/MiltonianTattoo.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MiltonianTattoo.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bree Serif';                                  /*About us heading*/
+    src: url('path/to/bree-serif.woff2') format('woff2'),
+         url('path/to/bree-serif.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Ariel';                                       /*About us page headings*/
+    src: url('path/to/ariel.woff2') format('woff2'),
+         url('path/to/ariel.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Alegreya';
+    src: url('fonts/Alegreya-Regular.woff2') format('woff2'),
+         url('fonts/Alegreya-Regular.woff') format('woff'),
+         url('fonts/Alegreya-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Alegreya';
+    src: url('fonts/Alegreya-Bold.woff2') format('woff2'),
+         url('fonts/Alegreya-Bold.woff') format('woff'),
+         url('fonts/Alegreya-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
