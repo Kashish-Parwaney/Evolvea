@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evolvea-Skill Sharing</title>
+    <title>Courses</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="global.css">
     <style>
@@ -21,17 +19,17 @@
         }
          h2 {
             font-family: 'Bree Serif', serif; /* Font for About Us section */
-            font-size:2.75rem;
         }
 
         h3,h4 {
             font-family: 'Ariel', sans-serif; /* Font for section headings */
             word-spacing: 3px;
         }
+        p {
+    font-family: 'Alegreya', serif; /* Apply Alegreya font to paragraphs and unordered lists */
+    font-size: 1.1rem;
+}
 
-        p{
-            font-family: 'Alegreya', serif; /* Font for paragraphs */
-        }
         .btn
         {
             font-family: 'Montserrat',sans-serif;
@@ -42,7 +40,7 @@
         .btn1{
             background-color: blueviolet;
         }
-        .btn1-color:hover {
+        .btn1:hover {
     background-color: rgb(252, 252, 252); /* Change background color on hover */
     cursor: pointer; /* Change cursor to pointer */
 }
@@ -66,69 +64,110 @@
     max-width: 400px; /* Limit width */
     margin: 0 auto;   /* Center the input fields */
 }
-.hero {
-    background-image: url('eIMAGES/hero.JPG'); /* Ensure the path is correct */
-    background-size: 150% 130%; /* Cover the entire section */
-    background-position: center; /* Center the image */
-    height: 650px; /* Set the height of the hero section */
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Center items vertically */
-    justify-content: flex-start; /* Align items to the left */
-    color: white; /* Text color */
-    position: relative; /* Position for absolute elements */
-    padding-left: 40px; /* Add padding to the left */
+body {
+    margin: 0;
+    padding: 0;
 }
 
-.hero-content {
-    position: relative; /* Position for overlay */
-    z-index: 2; /* Ensure text is above the image */
+header {
+    background-color:#D4BB98;
+    padding: 20px;
+    text-align: center;
 }
-     .video-section {
-            padding: 50px 0;
-        }
-        .video-card {
-            transition: transform 0.3s;
-        }
-        .video-card:hover {
-            transform: scale(1.05);
-        }
-        .why-choose-us {
-            background-color: #f8f9fa;
-            padding: 50px 0;
-        }
-        #ed
-        {
-            font-size:1.5rem;
-            padding-left:45px;
-        }
-        .shadow-box{
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
-            margin-top: -220px
-        }
-        .btn-lg{
-            margin-left: 200px;
-        }
-        .why-choose-us{
-            background-color: #D4BB98;
-            display: flex; /* Use Flexbox for the row */
-            flex-wrap: wrap; /* Allow wrapping of columns */
-        }
-        .field-bg
-        {
-            background-color:#5F4B2A;
-            padding: 20px; /* Optional: Add padding for better spacing */
-            border-radius: 8px; /* Optional: Add rounded corners */
-            color: white;
-            margin-left: 20px;
-            margin-right: 20px;
-            margin-bottom:10px;
-            flex: 1; /* Allow columns to grow equally */
-  
-    display: flex; /* Use Flexbox for the column */
-    flex-direction: column; /* Stack content vertically */ 
 
-        }
-        .btn-specialization{background-color: green;}
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+  height: 42px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  padding: 8px 14px;
+  font-size: 16px;
+  border-radius: 25px;
+  outline: none;
+  background-color: #f1f1f1;
+  transition: background 0.3s;
+}
+
+.search-input:focus {
+  background-color: #e6e6e6;
+}
+
+.search-button {
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color:gray;
+}
+
+.search-button svg {
+  fill: #fff;
+}
+
+
+.course-listings, .featured-courses, .testimonials {
+    padding: 20px;
+}
+
+
+.course-card, .featured-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    display: inline-block;
+    width: calc(33% - 40px);
+    vertical-align: top;
+}
+
+.course-card img, .featured-card img {
+    width: 100%;
+    height: auto;
+}
+
+.rating {
+    color: #ffcc00; /* Gold color for stars */
+}
+
+.featured-badge {
+    background-color: #ffcc00;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    position: absolute
+
+}
+.btn-cr
+{
+    background-color: rgb(36, 33, 33);
+    border-radius:20px;
+    padding: top 5px;
+    font-size: small;
+}
+.btn-cr:hover
+{
+    background-color: aliceblue;
+}
+.suggestions-container{padding-top:10px;}
 </style>
 </head>
 <body>
@@ -145,17 +184,34 @@
                 <img src="eIMAGES/Profile.png" alt="Profile" width="40">
             </button>
         </div>
+
     </header>
-    <section class="hero">
-        <div class="shadow-box">
-            <h2 class="fw-bold">Binge-Worthy Learning Awaits!</h2>
-            <p id="ed">Discover skills that keep you hooked and level up <br> with hands on learning from the Real Experts!</p>
-            <a href="#" class="btn btn1 btn-lg">Get Started Now</a>
-        </div>
-    </section>
+    <header class="text-center py-4">
+        <h2 class="fw-bold">Discover Your Next Skill</h2>
+        <div class="search-container mb-3">
+            <input type="text" placeholder="Search courses..." class="search-input">
+            <button class="search-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-search" viewBox="0 0 24 24">
+             <circle cx="11" cy="11" r="8"></circle>
+             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+           </svg>
+            </button>
+          </div>
+            <div class="suggestions-container mb-3">
+                <button class="btn btn-cr mx-2">Web Design</button>
+                <button class="btn btn-cr mx-2">Yoga & Fitness</button>
+                <button class="btn btn-cr mx-2">Photography</button>
+                <button class="btn btn-cr mx-2">Data Science</button>
+                <button class="btn btn-cr mx-2">Digital Marketing</button>
+            </div>
+          </div>
+          
+    </header>
     <section class="video-section text-center">
         <div class="container">
-            <h3 class="fw-bold">EXPLORE TRENDING SKILLS</h3><br><br>
+            <br><h3 class="fw-bold">EXPLORE TRENDING SKILLS</h3><br><br>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card video-card">
@@ -163,8 +219,7 @@
                         <div class="card-body">
                             <h5 class="card-title">WEB DEVELOPMENT 101</h5>
                             <p class="card-text">Learn the fundamentals of web development with HTML, CSS, and JavaScript. Build simple, responsive websites and start your web development journey.</p>
-                            <a href="#" class="btn btn-specialization">SPECIALIZATION</a>
-                            <a href="#" class="btn btn1">Enroll now!</a>
+                            <a href="#" class="btn btn1">Watch Video</a>
                         </div>
                     </div>
                 </div>
@@ -194,8 +249,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Digital Marketing 101</h5>
                             <p class="card-text">Learn the fundamentals of digital marketing, including SEO, social media & content strategies. Build skills to promote brands and drive online success.</p>
-                            <a href="#" class="btn btn-specialization">SPECIALIZATION</a>
-                            <a href="#" class="btn btn1">Enroll now!</a>
+                            <a href="#" class="btn btn1">Watch Video</a>
                             
                         </div>
                     </div>
@@ -224,48 +278,47 @@
             </div>
         </div>
     </section>
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us text-center">
+    <section class="video-section text-center custom-bg">
         <div class="container">
-            <h2>Why Choose Us?</h2><br><br>
+            <br><h3 class="fw-bold">SPECIALIZATIONS</h3><br><br>
             <div class="row">
-                <div class="col-md-3 field-bg">
-                    <h3>Diverse Skill Offerings</h3>
-                    <p>Access a wide range of skills from cooking to coding.</p>
+                <div class="col-md-4">
+                    <div class="card video-card">
+                        <img src="" class="card-img-top" alt="Video 1">
+                        <div class="card-body">
+                            <h5 class="card-title">WEB DEVELOPMENT 101</h5>
+                            <p class="card-text">Learn the fundamentals of web development with HTML, CSS, and JavaScript. Build simple, responsive websites and start your web development journey.</p>
+                            <a href="#" class="btn btn1">Watch Video</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 field-bg">
-                    <h3>Expert Instructors</h3>
-                    <p>Learn from experienced professionals and passionate hobbyists.</p>
+                <div class="col-md-4">
+                    <div class="card video-card">
+                        <img src="eIMAGES\designtut.png" class="card-img-top" alt="Video 2">
+                        <div class="card-body">
+                            <h5 class="card-title">LAYOUT DESIGN TUOTORIALS</h5>
+                            <p class="card-text">Master the fundamentals of layout design with CSS and responsive techniques. Create visually appealing and user-friendly website layouts that too in just 5 video course series!</p>
+                            <a href="#" class="btn btn1">Watch Video</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 field-bg">
-                    <h3>Community Support</h3>
-                    <p>Join a supportive community that encourages collaboration and growth.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 field-bg">
-                    <h3>Flexible Learning</h3>
-                    <p>Learn at your own pace, anytime, anywhere.</p>
-                </div>
-                <div class="col-md-3 field-bg">
-                    <h3>Affordable Courses</h3>
-                    <p>Quality education at prices that fit your budget.</p>
-                </div>
-                <div class="col-md-3 field-bg">
-                    <h3>Certification</h3>
-                    <p>Receive certificates upon course completion to showcase your skills by learning Specialization courses</p>
+                <div class="col-md-4">
+                    <div class="card video-card">
+                        <img src="eIMAGES\crochet.png" class="card-img-top" alt="Video 3">
+                        <div class="card-body">
+                            <h5 class="card-title">GET STARTED WITH CROCHET!</h5>
+                            <p class="card-text">Learn the basics of crochet, including essential stitches and techniques. Create your projects with simple patterns and start your creative journey.Level up your crochet skills with this NOW!</p>
+                            <a href="#" class="btn btn1">Watch Video</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="container my-5 text-center custom-bg2 p-4 rounded">
-        <h3 class="fw-bold">Want to hear more from us?</h3>
-        <p>Sign up for our Monthly Newsletters and Exclusives!</p>
-        <input type="text" class="form-control mb-2 input-width" placeholder="Name">
-        <input type="email" class="form-control mb-2 input-width" placeholder="E-mail">
-        <button class="btn btn-color btn1">Sign Up</button>
-    </section>
+
+
+
 
 
 
@@ -276,7 +329,7 @@
                 <div class="col">
                     <h5>ABOUT</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="About.html" class="text-white text-decoration-none">About Us</a></li>
                         <li><a href="#" class="text-white text-decoration-none">Careers</a></li>
                         <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
                     </ul>
@@ -318,8 +371,8 @@
                 <div class="col">
                     <h5>Legal</h5>
                     <ul class="list-unstyled">
-                        <li><a href="Copyright.html"class="text-white text-decoration-none">Copyrights</a></li>
-                        <li><a href="Copyright.html" class="text-white text-decoration-none">Attributions</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Copyrights</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Attributions</a></li>
                     </ul>
                 </div>
                 <!-- Help Section -->
