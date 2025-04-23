@@ -237,10 +237,10 @@
         <section class="container my-5 text-center custom-bg2 p-4 rounded" id="Contact">
             <h3 class="fw-bold">Contact Us</h3>
             <p>If you have any questions about our career opportunities, please reach out to us here.</p>
-            <input type="text" class="form-control mb-2 input-width" placeholder="Name">
-            <input type="email" class="form-control mb-2 input-width" placeholder="E-mail">
-            <input type="textarea" class="form-control mb-2 input-width input-height">
-            <button class="btn btn-color btn1">Send</button>
+            <input type="text" class="form-control mb-2 input-width" placeholder="Name" id="contact-name" required>
+            <input type="email" class="form-control mb-2 input-width" placeholder="E-mail" id="contact-email" required>
+            <textarea class="form-control mb-2 input-width input-height" placeholder="Your Message" id="contact-message" required></textarea>
+            <button class="btn btn-color btn1" id="send-button">Send</button>
         </section>
         </section>
         <button onclick="scrollToTop()" id="topBtn" title="Go to top">↑</button>
@@ -339,6 +339,31 @@
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           </script>
+          <script>
+            document.getElementById('send-button').addEventListener('click', function(event) {
+                // Prevent the default button action
+                event.preventDefault();
+    
+                // Get the values from the input fields
+                const name = document.getElementById('contact-name').value;
+                const email = document.getElementById('contact-email').value;
+                const message = document.getElementById('contact-message').value;
+    
+                // Validate that the fields are not empty
+                if (name === '' || email === '' || message === '') {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+    
+                // Show the alert with the message
+                alert('Your message has been sent successfully!');
+    
+                // Optionally, reset the form fields
+                document.getElementById('contact-name').value = '';
+                document.getElementById('contact-email').value = '';
+                document.getElementById('contact-message').value = '';
+            });
+        </script>
           
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
