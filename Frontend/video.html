@@ -59,15 +59,54 @@
       background-color: rgb(252, 252, 252);
       cursor: pointer;
     }
+/* Style for the drop-down button */
+.dropbtn {
+    background-color: transparent; /* Remove background to make the image visible */
+    border: none;
+    cursor: pointer;
+}
 
-    #profile-btn img {
-      transition: 0.3s ease-in-out;
-    }
+/* Style for the profile image */
+.profile-img {
+    width: 40px;   /* Adjust the size as needed */
+    height: 40px;  /* Adjust the size as needed */
+    border-radius: 50%;  /* Makes the image circular */
+    object-fit: cover;  /* Ensures the image fits well */
+}
 
-    #profile-btn:hover img {
-      transform: scale(1.1);
-    }
+/* The container for the drop-down */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
+/* The drop-down content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the drop-down */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of links when hovering */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the drop-down content when hovering over the drop-down button */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
     .container {
       flex: 1;
       display: flex;
@@ -120,9 +159,16 @@
                 <a href="About.html" target="_blank" class="btn btn-outline-light me-3">About Us</a>
                 <a href="Careers.html#Contact" target="_blank" class="btn btn-outline-light">Contact</a>
       </nav>
-      <button class="btn btn rounded-circle ms-3" id="profile-btn">
-        <img src="eIMAGES/Profile.png" alt="Profile" width="40" />
-      </button>
+      <div class="dropdown">
+        <button class="dropbtn">
+            <img src="eIMAGES\Profile.png" alt="Profile Picture" class="profile-img">
+        </button>
+        <div class="dropdown-content">
+            <a href="#" id="login-link">Login</a>
+            <a href="#" id="dashboard-link">Dashboard</a>
+            <a href="#" id="logout-link">Log Out</a>
+        </div>
+    </div>
     </div>
   </header>
 

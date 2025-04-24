@@ -48,62 +48,13 @@
     cursor: pointer; /* Change cursor to pointer */
 }
 
-.profile-container {
-    position: relative;
-    display: inline-block;
-}
-
-#profile-btn {
-    background: none;
-    border: none;
-    padding: 5px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 #profile-btn img {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    object-fit: cover;
+    transition: 0.3 s ease-in-out;
 }
 
-#profile-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+#profile-btn:hover img {
+    transform: scale(1.1);
 }
-
-.dropdown {
-    position: absolute;
-    right: 0;
-    top: 120%;
-    background: #fff;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    z-index: 1000;
-    min-width: 150px;
-    transition: all 0.3s ease;
-}
-
-.dropdown a {
-    display: block;
-    padding: 10px 16px;
-    color: #333;
-    text-decoration: none;
-    font-size: 14px;
-    transition: background 0.2s ease;
-}
-
-.dropdown a:hover {
-    background-color: #f0f0f0;
-}
-
-.hidden {
-    display: none;
-}
-
     #1{
         font-weight: bold;
     }
@@ -203,6 +154,55 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             padding: 40px; /* Padding inside the section */
 }
+/* Style for the drop-down button */
+.dropbtn {
+    background-color: transparent; /* Remove background to make the image visible */
+    border: none;
+    cursor: pointer;
+}
+
+/* Style for the profile image */
+.profile-img {
+    width: 40px;   /* Adjust the size as needed */
+    height: 40px;  /* Adjust the size as needed */
+    border-radius: 50%;  /* Makes the image circular */
+    object-fit: cover;  /* Ensures the image fits well */
+}
+
+/* The container for the drop-down */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* The drop-down content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the drop-down */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of links when hovering */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the drop-down content when hovering over the drop-down button */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 
 </style>
 </head>
@@ -216,16 +216,18 @@
                 <a href="About.html" target="_blank" class="btn btn-outline-light me-3">About Us</a>
                 <a href="Careers.html#Contact" target="_blank" class="btn btn-outline-light">Contact</a>
             </nav>
-            <div class="profile-container">
-                <button id="profile-btn">
-                  <img src="profile.jpg" alt="Profile" />
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <img src="eIMAGES\Profile.png" alt="Profile Picture" class="profile-img">
                 </button>
-                <div id="profile-dropdown" class="dropdown">
-                  <a href="#">Login</a>
-                  <a href="#">dashboard</a>
-                  <a href="#">Logout</a>
+                <div class="dropdown-content">
+                    <a href="#" id="login-link">Login</a>
+                    <a href="#" id="dashboard-link">Dashboard</a>
+                    <a href="#" id="logout-link">Log Out</a>
                 </div>
-              </div>
+            </div>
+            
+              
         </div>
     </header>
     <section class="hero">
@@ -246,7 +248,7 @@
                             <h5 class="card-title">WEB DEVELOPMENT 101</h5>
                             <p class="card-text">Learn the fundamentals of web development with HTML, CSS, and JavaScript. Build simple, responsive websites and start your web development journey.</p>
                             <a href="#" class="btn btn-specialization">SPECIALIZATION</a>
-                            <a href="#" class="btn btn1 enroll-btn" data-course="Course Title Here">Enroll now!</a>
+                        <a href="#" class="btn btn1 enroll-btn" data-course="Course Title Here">Enroll now!</a>
 
                         </div>
                     </div>
@@ -459,7 +461,35 @@
         event.target.reset();
     });
 </script>
-<script src="script.js"></script>
+    <script src="profile.js"></script>
+    <script>window.onload = function () {
+        const loginLink = document.getElementById('login-link');
+        const dashboardLink = document.getElementById('dashboard-link');
+        const logoutLink = document.getElementById('logout-link');
+    
+        // Check if the user is logged in
+        const user = JSON.parse(localStorage.getItem('user'));  // Assuming user info is stored in localStorage
+    
+        if (user) {
+            // If logged in, show Dashboard and Log Out options
+            dashboardLink.href = user.role === 'trainer' ? 'trainer_dashboard.php' : 'learner_dashboard.php';  // Link to appropriate dashboard
+            logoutLink.onclick = function() {
+                localStorage.removeItem('user'); // Clear user data on logout
+                window.location.href = 'login.html'; // Redirect to login page after logout
+            };
+    
+            loginLink.style.display = 'none';  // Hide Login link
+        } else {
+            // If not logged in, show Login link and hide Dashboard, Log Out options
+            dashboardLink.style.display = 'none';
+            logoutLink.style.display = 'none';
+    
+            loginLink.onclick = function() {
+                window.location.href = 'login.html'; // Redirect to login page
+            };
+        }
+    };
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
