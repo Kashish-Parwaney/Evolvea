@@ -14,6 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="global.css">
+    <script src="script.js"></script>
     <style>
         h1
         {
@@ -47,13 +48,62 @@
     cursor: pointer; /* Change cursor to pointer */
 }
 
-#profile-btn img {
-    transition: 0.3 s ease-in-out;
+.profile-container {
+    position: relative;
+    display: inline-block;
 }
 
-#profile-btn:hover img {
-    transform: scale(1.1);
+#profile-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+#profile-btn img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#profile-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown {
+    position: absolute;
+    right: 0;
+    top: 120%;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1000;
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px 16px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.dropdown a:hover {
+    background-color: #f0f0f0;
+}
+
+.hidden {
+    display: none;
+}
+
     #1{
         font-weight: bold;
     }
@@ -166,12 +216,16 @@
                 <a href="About.html" target="_blank" class="btn btn-outline-light me-3">About Us</a>
                 <a href="Careers.html#Contact" target="_blank" class="btn btn-outline-light">Contact</a>
             </nav>
-            <a href="login.html">
-                <button class="btn btn rounded-circle ms-3" id="profile-btn">
-                  <img src="eIMAGES/Profile.png" alt="Profile" width="40">
+            <div class="profile-container">
+                <button id="profile-btn">
+                  <img src="profile.jpg" alt="Profile" />
                 </button>
-              </a>
-              
+                <div id="profile-dropdown" class="dropdown">
+                  <a href="#">Login</a>
+                  <a href="#">dashboard</a>
+                  <a href="#">Logout</a>
+                </div>
+              </div>
         </div>
     </header>
     <section class="hero">
@@ -192,7 +246,8 @@
                             <h5 class="card-title">WEB DEVELOPMENT 101</h5>
                             <p class="card-text">Learn the fundamentals of web development with HTML, CSS, and JavaScript. Build simple, responsive websites and start your web development journey.</p>
                             <a href="#" class="btn btn-specialization">SPECIALIZATION</a>
-                            <a href="course-desc.html" class="btn btn1">Enroll now!</a>
+                            <a href="#" class="btn btn1 enroll-btn" data-course="Course Title Here">Enroll now!</a>
+
                         </div>
                     </div>
                 </div>
@@ -223,7 +278,8 @@
                             <h5 class="card-title">Digital Marketing 101</h5>
                             <p class="card-text">Learn the fundamentals of digital marketing, including SEO, social media & content strategies. Build skills to promote brands and drive online success.</p>
                             <a href="#" class="btn btn-specialization">SPECIALIZATION</a>
-                            <a href="course-desc.html" class="btn btn1">Enroll now!</a>
+                            <a href="#" class="btn btn1 enroll-btn" data-course="Course Title Here">Enroll now!</a>
+
                             
                         </div>
                     </div>
@@ -403,7 +459,7 @@
         event.target.reset();
     });
 </script>
-    
+<script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
