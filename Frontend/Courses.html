@@ -10,106 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="/Frontend/css/styles.css">
+    <link rel="stylesheet" href="/Frontend/css/global.css">
     <style>
-        h1
-        {
-            font-family: 'Miltonian Tattoo',serif;
-        }
-         h2 {
-            font-family: 'Bree Serif', serif; /* Font for About Us section */
-        }
-
-        h3,h4 {
-            font-family: 'Ariel', sans-serif; /* Font for section headings */
-            word-spacing: 3px;
-        }
-        p {
-    font-family: 'Alegreya', serif; /* Apply Alegreya font to paragraphs and unordered lists */
-    font-size: 1.1rem;
-}
-
-        .btn
-        {
-            font-family: 'Montserrat',sans-serif;
-            padding: 0.25rem 0.5rem; /* Adjust padding (top/bottom, left/right) */
-            font-size: 0.875rem; /* Adjust font size */
-            color: #fff;
-        }
-        .btn1{
-            background-color: blueviolet;
-        }
-        .btn1:hover {
-    background-color: rgb(252, 252, 252); /* Change background color on hover */
-    cursor: pointer; /* Change cursor to pointer */
-}
-/* Style for the drop-down button */
-.dropbtn {
-    background-color: transparent; /* Remove background to make the image visible */
-    border: none;
-    cursor: pointer;
-}
-
-/* Style for the profile image */
-.profile-img {
-    width: 40px;   /* Adjust the size as needed */
-    height: 40px;  /* Adjust the size as needed */
-    border-radius: 50%;  /* Makes the image circular */
-    object-fit: cover;  /* Ensures the image fits well */
-}
-
-/* The container for the drop-down */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* The drop-down content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-/* Links inside the drop-down */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color of links when hovering */
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-/* Show the drop-down content when hovering over the drop-down button */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-    #1{
-        font-weight: bold;
-    }
-
-    #list1{
-        font-family:'Alegreya',serif;
-    }
-
-    .input-width {
-    max-width: 400px; /* Limit width */
-    margin: 0 auto;   /* Center the input fields */
-}
-body {
-    margin: 0;
-    padding: 0;
-}
-
-header {
+    header {
     background-color:#D4BB98;
     padding: 20px;
     text-align: center;
@@ -202,10 +106,12 @@ header {
     border-radius:20px;
     padding: top 5px;
     font-size: small;
+    color: whitesmoke;
 }
 .btn-cr:hover
 {
-    background-color: aliceblue;
+    background-color: white;
+    color: black;
 }
 .suggestions-container{padding-top:10px;}
 .video-section {
@@ -221,46 +127,11 @@ header {
             background-color: #f8f9fa;
             padding: 50px 0;
         }
-        .btn-specialization{background-color: green;}
-        #topBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 99;
-  font-size: 20px;
-  border: none;
-  outline: none;
-  color: white;
-  cursor: pointer;
-  padding: 12px 18px;
-  border-radius: 40px;
-  background-color: blueviolet;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-#topBtn:hover {
-  background-color: #0056b3;
-}
 </style>
 </head>
 <body>
-    <header class="bg-dark text-white py-3">
-        <div class="container d-flex justify-content-end align-items-center">
-            <h1 class="h1 me-auto">EVOLVEA</h1>
-            <nav class="d-flex">
-                <a href="index.html"class="btn btn-outline-light me-3">Home</a>
-                <a href="Courses.html" target="_blank" class="btn btn-outline-light me-3">Courses</a>
-                <a href="About.html" target="_blank" class="btn btn-outline-light me-3">About Us</a>
-                <a href="Careers.html#Contact" target="_blank" class="btn btn-outline-light">Contact</a>
-            </nav>
-            <a href="login.html">
-                <button class="btn btn rounded-circle ms-3" id="profile-btn">
-                  <img src="eIMAGES/Profile.png" alt="Profile" width="40">
-                </button>
-              </a>
-        </div>
+    <div id="header"></div>
 
-    </header>
     <header class="text-center py-4">
         <h2 class="fw-bold">Discover Your Next Skill</h2>
         <div class="search-container mb-3">
@@ -395,78 +266,10 @@ header {
     </section>
     <button onclick="scrollToTop()" id="topBtn" title="Go to top">↑</button>
 
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
-                <!-- ABOUT Section -->
-                <div class="col">
-                    <h5>ABOUT</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="About.html"target="_blank" class="text-white text-decoration-none">About Us</a></li>
-                        <li><a href="Careers.html" target="_blank" class="text-white text-decoration-none">Careers</a></li>
-                        <li><a href="Careers.html#Contact" target="_blank" class="text-white text-decoration-none">Contact</a></li>
-                    </ul>
-                </div>
-                <!-- Technical Courses Section -->
-                <div class="col">
-                    <h5>Technical Courses</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">Web Development</a></li>
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">Data Science</a></li>
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">Cloud Computing</a></li>
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">Cyber Security</a></li>
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">DevOps</a></li>
-                    </ul>
-                </div>
-                <!-- Non-Technical Courses Section -->
-                <div class="col">
-                    <h5>Non-Technical Courses</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">Communication</a></li>
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">Cooking & Baking</a></li>
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">Creative Writing</a></li>
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">Fashion Designing</a></li>
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">Crochet & Stitching</a></li>
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">Fitness & Yoga</a></li>
-                    </ul>
-                </div>
-                <!-- Specialization Section -->
-                <div class="col">
-                    <h5>Specialization</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">Photography</a></li>
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">Web Development 101</a></li>
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">Music Production</a></li>
-                        <li><a href="course-desc.html" class="text-white text-decoration-none">Digital Marketing</a></li>
-                    </ul>
-                </div>
-                <!-- Help Section -->
-                <div class="col">
-                    <h5>Help</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="FAQs.html" class="text-white text-decoration-none" target="_blank">FAQs</a></li>
-                        <li><a href="FAQs.html#Feedback" target="_blank" class="text-white text-decoration-none">Feedback</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="custom-hr my-4">
-            <br>
-<div class="d-flex justify-content-center align-items-center position-relative">
-    <!-- EVOLVEA Centered -->
-    <h1 class="h3 mb-0 position-absolute top-50 start-50 translate-middle">EVOLVEA</h1>
-    <!-- Social Media Icons Aligned to the Right -->
-    <div class="position-absolute end-0">
-        <a href="#"> <img src="eIMAGES\Screenshot 2025-03-29 190727.png" class="img-fluid rounded me-3" width="55" alt="YouTube"></a>
-        <a href="#"> <img src="eIMAGES/Screenshot 2025-03-29 175145.png" class="img-fluid rounded me-3" width="45" alt="Instagram"></a>
-        <a href="#"> <img src="eIMAGES\Screenshot 2025-03-29 190831.png" class="img-fluid rounded" width="40" alt="Facebook"></a>
-    </div>
-</div>
-<div class="text-center mt-3">
-    <p class="mb-0">&copy; 2025 Evolvea. All Rights Reserved</p>
-</div>
+    <div id="footer"></div>
 
-            
-    </footer>
+    <script src="js/main.js"></script> <!-- Load the header/footer -->
+
     <script>
         // Show scroll button
         window.onscroll = function () {

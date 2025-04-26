@@ -1,227 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>VideoPlayer | EVOLVEA</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&family=Oxygen:wght@300;400;700&family=Montserrat:wght@400;700&family=Alegreya:wght@400;700&display=swap" rel="stylesheet" />
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="global.css" />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-
-    h1 {
-      font-family: 'Miltonian Tattoo', serif;
-    }
-
-    h2 {
-      font-family: 'Bree Serif', serif;
-    }
-
-    h3, h4 {
-      font-family: Arial, sans-serif;
-      word-spacing: 3px;
-    }
-
-    p {
-      font-family: 'Alegreya', serif;
-      font-size: 1.1rem;
-    }
-
-    .btn {
-      font-family: 'Montserrat', sans-serif;
-      padding: 0.25rem 0.5rem;
-      font-size: 0.875rem;
-      color: #fff;
-    }
-
-    .btn1 {
-      background-color: blueviolet;
-    }
-
-    .btn1-color:hover {
-      background-color: rgb(252, 252, 252);
-      cursor: pointer;
-    }
-/* Style for the drop-down button */
-.dropbtn {
-    background-color: transparent; /* Remove background to make the image visible */
-    border: none;
-    cursor: pointer;
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolvea-Skill Sharing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Frontend/css/styles.css">
+    <link rel="stylesheet" href="/Frontend/css/global.css">
+    <style>
+      .video-playlist {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 500px;
 }
 
-/* Style for the profile image */
-.profile-img {
-    width: 40px;   /* Adjust the size as needed */
-    height: 40px;  /* Adjust the size as needed */
-    border-radius: 50%;  /* Makes the image circular */
-    object-fit: cover;  /* Ensures the image fits well */
+.playlist-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.3s;
 }
 
-/* The container for the drop-down */
-.dropdown {
-    position: relative;
-    display: inline-block;
+.playlist-item:hover {
+  background: #ececec;
 }
 
-/* The drop-down content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+.playlist-item img {
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
-/* Links inside the drop-down */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+.playlist-item p {
+  margin: 0;
+  font-size: 16px;
+}
+.video-page {
+  display: flex;        /* 🔥 This makes the main video and playlist side-by-side */
+  gap: 10px;             /* Optional: adds space between the video and playlist */
+  margin-top: 20px;
+  margin-left:50px;      /* Optional: add a bit of top spacing */
 }
 
-/* Change color of links when hovering */
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
+.main-video {
+  flex: 2;               /* Main video takes more space */
 }
 
-/* Show the drop-down content when hovering over the drop-down button */
-.dropdown:hover .dropdown-content {
-    display: block;
+.video-playlist {
+  flex: 1;               /* Playlist takes lesser space */
+  overflow-y: auto;
+  max-height: 500px;
 }
-    .container {
-      flex: 1;
-      display: flex;
-    }
+.head{
+  margin-left: 50px;
+}
 
-    .sidebar {
-      width: 250px;
-      background-color: #D4BB98;
-      padding: 15px;
-      overflow-y: auto;
-    }
-
-    .sidebar h3 {
-      margin-top: 0;
-    }
-
-    .video-list button {
-      width: 100%;
-      padding: 10px;
-      margin: 5px 0;
-      border: none;
-      background-color:  #FFF9DF;
-      cursor: pointer;
-      text-align: left;
-    }
-
-    .video-list button:hover {
-      background: #bbb;
-    }
-
-    .main {
-      flex: 1;
-      padding: 15px;
-    }
-
-    video {
-      width: 100%;
-      height: auto;
-    }
-  </style>
+/* (keep your existing playlist-item styles) */
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="bg-dark text-white py-3">
-    <div class="container d-flex justify-content-end align-items-center">
-      <h1 class="h1 me-auto">EVOLVEA</h1>
-      <nav class="d-flex">
-        <a href="index.html"class="btn btn-outline-light me-3">Home</a>
-                <a href="Courses.html" target="_blank" class="btn btn-outline-light me-3">Courses</a>
-                <a href="About.html" target="_blank" class="btn btn-outline-light me-3">About Us</a>
-                <a href="Careers.html#Contact" target="_blank" class="btn btn-outline-light">Contact</a>
-      </nav>
-      <div class="dropdown">
-        <button class="dropbtn">
-            <img src="eIMAGES\Profile.png" alt="Profile Picture" class="profile-img">
-        </button>
-        <div class="dropdown-content">
-            <a href="#" id="login-link">Login</a>
-            <a href="#" id="dashboard-link">Dashboard</a>
-            <a href="#" id="logout-link">Log Out</a>
-        </div>
-    </div>
-    </div>
-  </header>
+  <div id="header"></div>
 
-  <!-- Main Content -->
-  <div class="container">
-    <div class="sidebar">
-      <h3>Playlist</h3>
-      <div class="video-list">
-        <button onclick="loadVideo('intro')">Video 1</button>
-        <button onclick="loadVideo('html')">Video 2</button>
-        <button onclick="loadVideo('css')">Video 3</button>
+  <main>
+    <h2 class="head">Course Videos</h2>
+  
+    <div class="video-page">
+      
+      <!-- Main Video Player -->
+      <div class="main-video">
+        <video id="mainVideo" controls width="700">
+          <source src="videos/sample1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 id="videoTitle">Course Title 1</h3>
+        <h4>Course Description</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptates vel molestias cum nemo adipisci repudiandae, dicta saepe excepturi itaque quasi doloremque deleniti reiciendis nostrum officia tempore ut quis corporis voluptatem asperiores perferendis iure, debitis non. Possimus maxime libero quisquam.</p>
       </div>
+  
+      <!-- Playlist with thumbnails -->
+      <div class="video-playlist">
+        <h3>Playlist</h3>
+        <div class="playlist-item" onclick="playVideo('videos/sample1.mp4', 'Course Title 1')">
+          <img src="thumbnails/thumb1.jpg" alt="Thumb 1">
+          <p>Course Title 1</p>
+        </div>
+  
+        <div class="playlist-item" onclick="playVideo('videos/sample2.mp4', 'Course Title 2')">
+          <img src="thumbnails/thumb2.jpg" alt="Thumb 2">
+          <p>Course Title 2</p>
+        </div>
+  
+        <div class="playlist-item" onclick="playVideo('videos/sample3.mp4', 'Course Title 3')">
+          <img src="thumbnails/thumb3.jpg" alt="Thumb 3">
+          <p>Course Title 3</p>
+        </div>
+  
+      </div>
+  
     </div>
-    <div class="main">
-      <video id="videoPlayer" controls>
-        <source id="videoSource" src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <h2 id="videoTitle">Video-Title</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eligendi numquam eum error possimus, nulla soluta, nam unde libero quod rem ex officia. Magnam, ullam quas veritatis debitis nesciunt cum? Molestias earum voluptas corrupti sunt.</p>
-    </div>
-  </div>
-
-  <!-- Video Script -->
+  
+  </main>
+  
+  <div id="footer"></div>
+  
+  <script src="js/main.js"></script>
+  
+  <!-- Corrected Script -->
   <script>
-    const videos = {
-      intro: {
-        title: "Introduction",
-        url: "https://www.w3schools.com/html/mov_bbb.mp4",
-      },
-      html: {
-        title: "HTML Basics",
-        url: "https://www.w3schools.com/html/movie.mp4",
-      },
-      css: {
-        title: "CSS Styling",
-        url: "https://www.w3schools.com/html/mov_bbb.mp4",
-      },
-    };
-
-    function loadVideo(key) {
-      const player = document.getElementById("videoPlayer");
-      const source = document.getElementById("videoSource");
-      const title = document.getElementById("videoTitle");
-
-      source.src = videos[key].url;
-      title.textContent = videos[key].title;
-      player.load();
-      player.play();
-    }
-  </script>        
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  function playVideo(src, title) {
+    const mainVideo = document.getElementById('mainVideo');
+    const videoTitle = document.getElementById('videoTitle');
+    
+    mainVideo.src = src;
+    mainVideo.load();
+    mainVideo.play();
+    
+    videoTitle.innerText = title;
+  }
+  </script>
+  
 </body>
 </html>
-
-
