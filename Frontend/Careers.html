@@ -165,26 +165,16 @@
             <button class="btn btn-color btn1" id="send-button">Send</button>
         </section>
         </section>
-        <button onclick="scrollToTop()" id="topBtn" title="Go to top">↑</button>
-
+        
         
         <div id="footer"></div>
 
         <script src="js/main.js"></script> <!-- Load the header/footer -->
+        
+        <button id="backToTop" class="back-to-top">Back to Top</button>
 
-        <script>
-            // Show scroll button
-            window.onscroll = function () {
-              document.getElementById("topBtn").style.display =
-                document.body.scrollTop > 200 || document.documentElement.scrollTop > 200
-                  ? "block"
-                  : "none";
-            };
+        <script src="/Frontend/js/backToTop.js"></script> <!-- Link to your JavaScript file -->
           
-            function scrollToTop() {
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }
-          </script>
           <script>
             document.getElementById('send-button').addEventListener('click', function(event) {
                 // Prevent the default button action

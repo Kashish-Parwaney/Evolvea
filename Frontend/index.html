@@ -19,24 +19,6 @@
         font-family:'Alegreya',serif;
     }
 
-
-.hero {
-    background-image: url('eIMAGES/hero.JPG'); /* Ensure the path is correct */
-    background-size: 150% 130%; /* Cover the entire section */
-    background-position: center; /* Center the image */
-    height: 650px; /* Set the height of the hero section */
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Center items vertically */
-    justify-content: flex-start; /* Align items to the left */
-    color: white; /* Text color */
-    position: relative; /* Position for absolute elements */
-    padding-left: 40px; /* Add padding to the left */
-}
-
-.hero-content {
-    position: relative; /* Position for overlay */
-    z-index: 2; /* Ensure text is above the image */
-}
      .video-section {
             padding: 50px 0;
         }
@@ -46,42 +28,106 @@
         .video-card:hover {
             transform: scale(1.05);
         }
-        .why-choose-us {
-            background-color: #f8f9fa;
-            padding: 50px 0;
-        }
+       
         #ed
         {
-            font-size:1.5rem;
-            padding-left:45px;
+            font-size:1.2rem;
         }
         .shadow-box{
             text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
             margin-top: -220px
         }
-        .btn-lg{
-            margin-left: 200px;
-        }
-        .why-choose-us{
-            background-color: #D4BB98;
-            display: flex; /* Use Flexbox for the row */
-            flex-wrap: wrap; /* Allow wrapping of columns */
-        }
-        .field-bg
-        {
-            background-color:#5F4B2A;
-            padding: 20px; /* Optional: Add padding for better spacing */
-            border-radius: 8px; /* Optional: Add rounded corners */
-            color: white;
-            margin-left: 20px;
-            margin-right: 20px;
-            margin-bottom:10px;
-            flex: 1; /* Allow columns to grow equally */
-  
-    display: flex; /* Use Flexbox for the column */
-    flex-direction: column; /* Stack content vertically */ 
+       
+        .why-choose-us {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 40px 20px;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      text-align: center;
+      background-color: #D4BB98;
+    }
 
-        }
+    .why-choose-us h2 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .reasons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+      
+    }
+
+    .reason {
+    background-color:#5F4B2A;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .reason:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .reason h3 {
+      font-size: 22px;
+      color:whitesmoke;
+      margin-bottom: 10px;
+    }
+
+    .reason p {
+      font-size: 16px;
+      color:whitesmoke;
+    }
+
+    .card {
+        border: none;
+        border-radius: 10px;
+        transition: transform 0.2s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+.carousel-image {
+  max-height: 550px; /* or whatever height feels right */
+  object-fit: cover;
+  width: 100%;
+  
+}
+/* Position the arrows closer to the corners */
+/* Position the arrows closer to the corners */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top:300px; /* Center vertically */
+  transform: translateY(-50%);
+  background: none; /* Remove any background */
+  border: none; /* Remove any border */
+  font-size: 2rem; /* Adjust the size if needed */
+  color: white; /* Arrow color */
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+
+.carousel-caption {
+    left: 0; /* Aligns the caption to the left */
+    right: auto; /* Prevents it from stretching to the right */
+    text-align: left; /* Aligns text to the left */
+    padding-bottom:250px; /* Optional: Add some padding for better spacing */
+    padding-left: 80px;
+}
+.carousel-caption .btn {
+    margin-left: 110px; /* Adjust this value to move the button to the right */
+}
+
 
 </style>
 </head>
@@ -90,12 +136,50 @@
     <div id="header"></div>
 
     <section class="hero">
-        <div class="shadow-box">
-            <h2 class="fw-bold">Binge-Worthy Learning Awaits!</h2>
-            <p id="ed">Discover skills that keep you hooked and level up <br> with hands on learning from the Real Experts!</p>
-            <a href="Courses.html" target="_blank" class="btn btn1 btn-lg">Get Started Now</a>
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+      
+            <div class="carousel-item active">
+              <img src="eIMAGES/hero.JPG" class="d-block w-100 carousel-image" style="height: 650px; object-fit: cover;" alt="Slide 1">
+              <div class="carousel-caption d-none d-md-block shadow-box">
+                <h3 class="fw-bold">Binge-Worthy Learning Awaits!</h3>
+                <p id="ed">Discover skills that keep you hooked and level up with <br>hands-on learning from real experts!</p>
+                <a href="Courses.html" target="_blank" class="btn btn1">Get Started Now</a>
+              </div>
+            </div>
+      
+            <div class="carousel-item">
+              <img src="eIMAGES/girlonlaptop.png" class="d-block w-100 carousel-image" style="height: 650px; object-fit: cover;" alt="Slide 2">
+              <div class="carousel-caption d-none d-md-block shadow-box">
+                <h3 class="fw-bold">Unlock New Skills Every Day!</h3>
+                <p id="ed">Join a growing community of learners and achievers worldwide.</p>
+                <a href="Courses.html" target="_blank" class="btn btn1">Explore Now</a>
+              </div>
+            </div>
+      
+            <div class="carousel-item">
+              <img src="eIMAGES/Mountain.png" class="d-block w-100 carousel-image" style="height: 650px; object-fit: cover;" alt="Slide 3">
+              <div class="carousel-caption d-none d-md-block shadow-box">
+                <h3 class="fw-bold">Your Skill Journey Starts Here</h3>
+                <p id="ed">Practical, Real-World Courses Taught by Experts.</p>
+                <a href="Courses.html" target="_blank" class="btn btn1">Join Today</a>
+              </div>
+            </div>
+      
+          </div>
+      
+          <!-- Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
         </div>
-    </section>
+      </section>
+      
+
+
     <section class="video-section text-center">
         <div class="container">
             <h3 class="fw-bold">EXPLORE TRENDING SKILLS</h3><br><br>
@@ -169,40 +253,31 @@
             </div>
         </div>
     </section>
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us text-center">
-        <div class="container">
-            <h2>Why Choose Us?</h2><br><br>
-            <div class="row">
-                <div class="col-md-3 field-bg">
-                    <h3>Diverse Skill Offerings</h3>
-                    <p>Access a wide range of skills from cooking to coding.</p>
-                </div>
-                <div class="col-md-3 field-bg">
-                    <h3>Expert Instructors</h3>
-                    <p>Learn from experienced professionals and passionate hobbyists.</p>
-                </div>
-                <div class="col-md-3 field-bg">
-                    <h3>Community Support</h3>
-                    <p>Join a supportive community that encourages collaboration and growth.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 field-bg">
-                    <h3>Flexible Learning</h3>
-                    <p>Learn at your own pace, anytime, anywhere.</p>
-                </div>
-                <div class="col-md-3 field-bg">
-                    <h3>Affordable Courses</h3>
-                    <p>Quality education at prices that fit your budget.</p>
-                </div>
-                <div class="col-md-3 field-bg">
-                    <h3>Certification</h3>
-                    <p>Receive certificates upon course completion to showcase your skills by learning Specialization courses</p>
-                </div>
-            </div>
+   
+    <section class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <div class="reasons">
+          <div class="reason">
+            <h3>Expert Instructors</h3>
+            <p>Learn from industry leaders and real-world experts with hands-on experience.</p>
+          </div>
+          <div class="reason">
+            <h3>Flexible Learning</h3>
+            <p>Access courses anytime, anywhere, and learn at your own pace.</p>
+          </div>
+          <div class="reason">
+            <h3>Practical Skills</h3>
+            <p>Get skills you can apply immediately with real projects and case studies.</p>
+          </div>
+          <div class="reason">
+            <h3>Supportive Community</h3>
+            <p>Join a vibrant community of learners and get support along your journey.</p>
+          </div>
         </div>
-    </section>
+      </section>
+      
+      
+
 
     <section class="container my-5 text-center custom-bg2" id="cont">
         <h3 class="fw-bold">Want to hear more from us?</h3>
@@ -214,68 +289,18 @@
         </form>
     </section>
     
-    <button onclick="scrollToTop()" id="topBtn" title="Go to top">↑</button>
-
+   
 
     <div id="footer"></div>
 
 <script src="js/main.js"></script> <!-- Load the header/footer -->
+<button id="backToTop" class="back-to-top">Back to Top</button>
 
-   <script>
-    // Show scroll button
-    window.onscroll = function () {
-      document.getElementById("topBtn").style.display =
-        document.body.scrollTop > 200 || document.documentElement.scrollTop > 200
-          ? "block"
-          : "none";
-    };
-  
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  </script>
-  
-  <script>
-    document.getElementById('newsletter-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
+<script src="/Frontend/js/backToTop.js"></script> <!-- Link to your JavaScript file -->
 
-        // Show the alert
-        alert('Sign-up successful!');
-
-        // Optionally, reset the form
-        event.target.reset();
-    });
 </script>
-    <script src="profile.js"></script>
-    <script>window.onload = function () {
-        const loginLink = document.getElementById('login-link');
-        const dashboardLink = document.getElementById('dashboard-link');
-        const logoutLink = document.getElementById('logout-link');
-    
-        // Check if the user is logged in
-        const user = JSON.parse(localStorage.getItem('user'));  // Assuming user info is stored in localStorage
-    
-        if (user) {
-            // If logged in, show Dashboard and Log Out options
-            dashboardLink.href = user.role === 'trainer' ? 'trainer_dashboard.php' : 'learner_dashboard.php';  // Link to appropriate dashboard
-            logoutLink.onclick = function() {
-                localStorage.removeItem('user'); // Clear user data on logout
-                window.location.href = 'login.html'; // Redirect to login page after logout
-            };
-    
-            loginLink.style.display = 'none';  // Hide Login link
-        } else {
-            // If not logged in, show Login link and hide Dashboard, Log Out options
-            dashboardLink.style.display = 'none';
-            logoutLink.style.display = 'none';
-    
-            loginLink.onclick = function() {
-                window.location.href = 'login.html'; // Redirect to login page
-            };
-        }
-    };
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
 

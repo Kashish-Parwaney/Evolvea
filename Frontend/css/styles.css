@@ -128,3 +128,22 @@ color:white
     max-width: 400px; /* Limit width */
     margin: 0 auto;   /* Center the input fields */
 }
+.back-to-top {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    display: none; /* Hidden by default */
+    background-color:blueviolet; /* Button color */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears above other elements */
+    font-size: 24px; /* Increase font size for visibility */
+    border-radius: 200px;
+}
+
+.back-to-top:hover {
+    background-color:rgb(88, 0, 171); /* Darker shade on hover */
+}

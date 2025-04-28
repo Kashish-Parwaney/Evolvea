@@ -68,26 +68,10 @@
             </div>
         </div>
     </div>
-        
-    <button onclick="scrollToTop()" id="topBtn" title="Go to top">↑</button>
     
     <div id="footer"></div>
 
     <script src="js/main.js"></script> <!-- Load the header/footer -->
-
-    <script>
-        // Show scroll button
-        window.onscroll = function () {
-          document.getElementById("topBtn").style.display =
-            document.body.scrollTop > 200 || document.documentElement.scrollTop > 200
-              ? "block"
-              : "none";
-        };
-      
-        function scrollToTop() {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-      </script>
       <script>document.getElementById('enroll-button').addEventListener('click', function() {
         alert('You have successfully enrolled in the course!');
     });
